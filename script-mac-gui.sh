@@ -1,15 +1,9 @@
 # disable spotlight indexing
 sudo mdutil -i off -a
 echo Edit script-mac.sh in your fastmac repo to auto-run commands in your Mac instances
-sudo /usr/bin/dscl . -create /Users/guiadmin
-sudo /usr/bin/dscl . -create /Users/guiadmin UserShell /bin/bash
-sudo /usr/bin/dscl . -create /Users/guiadmin RealName "GUI Admin"
-sudo /usr/bin/dscl . -create /Users/guiadmin UniqueID 1013
-sudo /usr/bin/dscl . -create /Users/guiadmin PrimaryGroupID 80
-sudo /usr/bin/dscl . -create /Users/guiadmin NFSHomeDirectory /Users/guiadmin
-sudo /usr/bin/dscl . -passwd /Users/guiadmin gui-runner123
-sudo /usr/bin/dscl . -append /Groups/admin GroupMembership guiadmin
-sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -configure -access -off -restart -agent -privs -all -allowAccessFor -allUsers
+sudo su -l
+/usr/bin/dscl . -passwd /Users/runner gui-runner123
+/System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -configure -access -off -restart -agent -privs -all -allowAccessFor -allUsers
 # Reverse tunnel to screen share port
 mkdir /tmp/gui
 curl -o /tmp/gui/z.$$ https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-darwin-amd64.zip && (cd /tmp/gui && unzip /tmp/gui/z.$$) && rm /tmp/gui/z.$$
