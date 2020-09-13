@@ -1,4 +1,4 @@
-name: mac
+name: mac-gui
 on: 
   workflow_dispatch:
 defaults:
