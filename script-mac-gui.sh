@@ -9,7 +9,7 @@ sudo /usr/bin/dscl . -create /Users/guiadmin NFSHomeDirectory /Users/guiadmin
 sudo /usr/bin/dscl . -passwd /Users/guiadmin gui-runner123
 sudo /usr/bin/dscl . -append /Groups/admin GroupMembership guiadmin
 sudo mkdir /Users/guiadmin
-sudo chown -R /Users/guiadmin
+sudo chown -R 1013 /Users/guiadmin
 sudo su -l guidadmin
 exit
 sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipAppearance -bool true
