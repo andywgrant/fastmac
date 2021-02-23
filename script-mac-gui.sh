@@ -10,8 +10,7 @@ sudo /usr/bin/dscl . -passwd /Users/guiadmin gui-runner123
 sudo /usr/bin/dscl . -append /Groups/admin GroupMembership guiadmin
 sudo mkdir /Users/guiadmin
 sudo chown -R 1013 /Users/guiadmin
-sudo su -l guiadmin
-exit
+sudo su -l guiadmin &
 sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipAppearance -bool true
 sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipCloudSetup -bool true
 sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipiCloudStorageSetup -bool true
