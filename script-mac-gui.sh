@@ -8,6 +8,14 @@ sudo /usr/bin/dscl . -create /Users/guiadmin PrimaryGroupID 80
 sudo /usr/bin/dscl . -create /Users/guiadmin NFSHomeDirectory /Users/guiadmin
 sudo /usr/bin/dscl . -passwd /Users/guiadmin gui-runner123
 sudo /usr/bin/dscl . -append /Groups/admin GroupMembership guiadmin
+sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipAppearance -bool true
+sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipCloudSetup -bool true
+sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipiCloudStorageSetup -bool true
+sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipPrivacySetup -bool true
+sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipSiriSetup -bool true
+sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipTrueTone -bool true
+sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipScreenTime -bool true
+sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipTouchIDSetup -bool true
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -configure -access -off -restart -agent -privs -all -allowAccessFor -allUsers
 # Reverse tunnel to screen share port
 mkdir /tmp/gui
