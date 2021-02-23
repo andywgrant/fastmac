@@ -19,6 +19,8 @@ sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipSiriSetup -
 sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipTrueTone -bool true
 sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipScreenTime -bool true
 sudo -u guiadmin defaults write com.apple.SetupAssistant.managed SkipTouchIDSetup -bool true
+sudo -u guiadmin defaults write com.apple.SetupAssistant.managed DidSeeCloudSetup -bool true
+sudo -u guiadmin defaults write com.apple.SetupAssistant DidSeeCloudSetup -bool true
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -configure -access -off -restart -agent -privs -all -allowAccessFor -allUsers
 # Reverse tunnel to screen share port
 mkdir /tmp/gui
