@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 defaults:
   run:
-    shell: zsh
+    shell: bash
 
 jobs:
   build:
